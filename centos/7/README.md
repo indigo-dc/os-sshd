@@ -24,8 +24,8 @@ Config:
 ## Usage
 
 ```bash
-$ docker run -d -P --name centos_sshd indigo-datacloud/centos-sshd:7
-$ sudo docker port centos_sshd 22
+$ docker run -d -P --name centos_sshd indigodatacloud/centos-sshd:7
+$ docker port centos_sshd 22
   0.0.0.0:32774
 
 $ ssh root@localhost -p 32774

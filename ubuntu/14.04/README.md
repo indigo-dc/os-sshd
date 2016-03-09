@@ -25,8 +25,8 @@ Config:
 ## Usage
 
 ```bash
-$ docker run -d -P --name ubuntu_sshd indigo-datacloud/ubuntu-sshd:14.04
-$ sudo docker port ubuntu_sshd 22
+$ docker run -d -P --name ubuntu_sshd indigodatacloud/ubuntu-sshd:14.04
+$ docker port ubuntu_sshd 22
   0.0.0.0:32774
 
 $ ssh root@localhost -p 32774
