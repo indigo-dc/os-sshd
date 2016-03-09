@@ -3,7 +3,7 @@ Docker image with SSHD support, based on the [official CentOS Docker Image](http
 
 ## Image tags
 
-- indigo-datacloud/centos-sshd:7 (trusty)
+- indigodatacloud/centos-sshd:7 (trusty)
 
 ## Installed packages
 

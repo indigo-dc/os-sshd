@@ -3,7 +3,7 @@ Docker image with SSHD support, based on the [official Ubuntu Docker Image](http
 
 ## Image tags
 
-- indigo-datacloud/ubuntu-sshd:14.04 (trusty)
+- indigodatacloud/ubuntu-sshd:14.04 (trusty)
 
 ## Installed packages
 
