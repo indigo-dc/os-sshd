@@ -13,6 +13,7 @@ Base:
 
 Image specific:
 - [openssh-server](https://help.ubuntu.com/community/SSH/OpenSSH/Configuring)
+- python-dev, python-pip, unzip, gcc, openssh-client, sshpass
 
 Config:
 
