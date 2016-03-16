@@ -1,10 +1,18 @@
 FROM       ubuntu:14.04
 
-RUN apt-get update
-
-RUN apt-get install -y openssh-server
+#Pre-installed packages to speed IM contextualization
+RUN apt-get update && apt-get install -y \
+    openssh-server \
+    python-dev \
+    python-pip \
+    unzip \
+    gcc \
+    openssh-client \
+    sshpass
 
 RUN mkdir /var/run/sshd
+
+RUN pip install ansible==1.9.4
 
 RUN echo 'root:indig0!' | chpasswd
 

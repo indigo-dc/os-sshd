@@ -1,6 +1,22 @@
 FROM centos:7
 
-RUN yum -y install openssh openssh-clients openssh-server
+RUN yum -y update; yum clean all
+
+#Pre-installed packages to speed IM contextualization
+RUN yum -y install \
+    openssh \
+    openssh-clients \
+    openssh-server \
+    python-distribute \
+    gcc \
+    python-devel \
+    wget \
+    openssh-client \
+    sshpass
+
+RUN easy_install pip
+
+RUN pip install ansible==1.9.4
 
 RUN ssh-keygen -f /etc/ssh/ssh_host_rsa_key -N '' -t rsa
 
