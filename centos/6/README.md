@@ -3,13 +3,13 @@ Docker image with SSHD support, based on the [official CentOS Docker Image](http
 
 ## Image tags
 
-- indigodatacloud/centos-sshd:7
+- indigodatacloud/centos-sshd:6
 
 ## Installed packages
 
 Base:
 
-- [CentOS (7) minimal](https://hub.docker.com/_/centos/)
+- [CentOS (6) minimal](https://hub.docker.com/_/centos/)
 
 Image specific:
 - [openssh-server](https://help.ubuntu.com/community/SSH/OpenSSH/Configuring)
@@ -25,7 +25,7 @@ Config:
 ## Usage
 
 ```bash
-$ docker run -d -P --name centos_sshd indigodatacloud/centos-sshd:7
+$ docker run -d -P --name centos_sshd indigodatacloud/centos-sshd:6
 $ docker port centos_sshd 22
   0.0.0.0:32774
 
