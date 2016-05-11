@@ -6,15 +6,17 @@ RUN apt-get update && \
 RUN apt-add-repository ppa:ansible/ansible
 
 # Pre-install packages to speed IM contextualization
-RUN apt-get update && apt-get install -y \
-    openssh-server \
-    python-dev \
-    python-pip \
-    unzip \
-    gcc \
-    openssh-client \
-    ansible \
-    sshpass \
+RUN apt-get update && \
+    apt-get install -y \
+        ansible \
+        cloud-init \
+        gcc \
+        openssh-client \
+        openssh-server \
+        python-dev \
+        python-pip \
+        sshpass \
+        unzip \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
