@@ -1,7 +1,8 @@
 FROM ubuntu:14.04
 
 # Install ansible repository
-RUN apt-get install software-properties-common -y
+RUN apt-get update && \
+    apt-get install -y software-properties-common
 RUN apt-add-repository ppa:ansible/ansible
 
 # Pre-install packages to speed IM contextualization
