@@ -1,6 +1,10 @@
-FROM       ubuntu:14.04
+FROM ubuntu:14.04
 
-#Pre-installed packages to speed IM contextualization
+# Install ansible repository
+RUN apt-get install software-properties-common -y
+RUN apt-add-repository ppa:ansible/ansible
+
+# Pre-install packages to speed IM contextualization
 RUN apt-get update && apt-get install -y \
     openssh-server \
     python-dev \
@@ -8,11 +12,12 @@ RUN apt-get update && apt-get install -y \
     unzip \
     gcc \
     openssh-client \
-    sshpass
+    ansible \
+    sshpass \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /var/run/sshd
-
-RUN pip install ansible==1.9.4
 
 RUN echo 'root:indig0!' | chpasswd
 

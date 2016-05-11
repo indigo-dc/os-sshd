@@ -1,6 +1,7 @@
 FROM centos:7
 
 RUN yum -y update; yum clean all
+RUN yum -y install epel-release; yum clean all
 
 #Pre-installed packages to speed IM contextualization
 RUN yum -y install \
@@ -12,11 +13,11 @@ RUN yum -y install \
     python-devel \
     wget \
     openssh-client \
-    sshpass
+    sshpass \
+    ansible \
+    && yum clean all
 
 RUN easy_install pip
-
-RUN pip install ansible==1.9.4
 
 RUN ssh-keygen -f /etc/ssh/ssh_host_rsa_key -N '' -t rsa
 
