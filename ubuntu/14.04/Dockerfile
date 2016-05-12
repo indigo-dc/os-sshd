@@ -1,6 +1,7 @@
 FROM ubuntu:14.04
 
 # Install ansible repository
+RUN apt-get update -y
 RUN apt-get install software-properties-common -y
 RUN apt-add-repository ppa:ansible/ansible
 
