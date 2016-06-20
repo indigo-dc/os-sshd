@@ -3,13 +3,13 @@ Docker image with SSHD support, based on the [official Ubuntu Docker Image](http
 
 ## Image tags
 
-- indigodatacloud/ubuntu-sshd:14.04 (trusty)
+- indigodatacloud/ubuntu-sshd:16.04 (xenial)
 
 ## Installed packages
 
 Base:
 
-- [Ubuntu Trusty (14.04) minimal](http://packages.ubuntu.com/trusty/ubuntu-minimal)
+- [Ubuntu Trusty (16.04) minimal](http://packages.ubuntu.com/xenial/ubuntu-minimal)
 
 Image specific:
 - [openssh-server](https://help.ubuntu.com/community/SSH/OpenSSH/Configuring)
@@ -26,7 +26,7 @@ Config:
 ## Usage
 
 ```bash
-$ docker run -d -P --name ubuntu_sshd indigodatacloud/ubuntu-sshd:14.04
+$ docker run -d -P --name ubuntu_sshd indigodatacloud/ubuntu-sshd:16.04
 $ docker port ubuntu_sshd 22
   0.0.0.0:32774
 
