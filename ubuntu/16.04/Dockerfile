@@ -1,5 +1,8 @@
 FROM ubuntu:16.04
 
+LABEL eu.indigo-datacloud.distribution="ubuntu"
+LABEL eu.indigo-datacloud.version="16.04"
+
 # Install ansible repository
 RUN apt-get update -y
 RUN apt-get install software-properties-common -y
