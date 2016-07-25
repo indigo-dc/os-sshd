@@ -1,0 +1,41 @@
+# os-sshd
+Docker image with SSHD support, based on the [official Ubuntu Docker Image](https://registry.hub.docker.com/_/ubuntu/)
+
+## Image tags
+
+- indigodatacloud/ubuntu-sshd:16.04 (xenial)
+
+## Installed packages
+
+Base:
+
+- [Ubuntu Trusty (16.04) minimal](http://packages.ubuntu.com/xenial/ubuntu-minimal)
+
+Image specific:
+- [openssh-server](https://help.ubuntu.com/community/SSH/OpenSSH/Configuring)
+- python-dev, python-pip, unzip, gcc, openssh-client, sshpass
+
+Config:
+
+  - `PermitRootLogin yes`
+  - `UsePAM no`
+  - exposed port 22
+  - default command: `/usr/sbin/sshd -D`
+  - root password: `indig0!`
+
+## Usage
+
+```bash
+$ docker run -d -P --name ubuntu_sshd indigodatacloud/ubuntu-sshd:16.04
+$ docker port ubuntu_sshd 22
+  0.0.0.0:32774
+
+$ ssh root@localhost -p 32774
+# Password is `indig0!`
+root@ubuntu_sshd $
+```
+
+## Acknowledgement
+
+Based on the [ubuntu-sshd] (https://github.com/rastasheep/ubuntu-sshd)
+repository and customized for INDIGO-DataCloud.

@@ -1,7 +1,7 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 
 LABEL eu.indigo-datacloud.distribution="ubuntu"
-LABEL eu.indigo-datacloud.version="14.04"
+LABEL eu.indigo-datacloud.version="16.04"
 
 # Install ansible repository
 RUN apt-get update -y
