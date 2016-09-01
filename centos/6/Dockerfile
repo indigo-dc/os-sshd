@@ -1,7 +1,9 @@
 FROM centos:6
 
+LABEL eu.indigo-datacloud.type="linux"
 LABEL eu.indigo-datacloud.distribution="centos"
 LABEL eu.indigo-datacloud.version="6"
+LABEL eu.indigo-datacloud.architecture="amd64"
 
 RUN yum -y update; yum clean all
 RUN yum -y install epel-release; yum clean all
