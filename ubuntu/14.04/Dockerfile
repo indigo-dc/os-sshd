@@ -1,7 +1,9 @@
 FROM ubuntu:14.04
 
+LABEL eu.indigo-datacloud.type="linux"
 LABEL eu.indigo-datacloud.distribution="ubuntu"
 LABEL eu.indigo-datacloud.version="14.04"
+LABEL eu.indigo-datacloud.architecture="amd64"
 
 # Install ansible repository
 RUN apt-get update -y
