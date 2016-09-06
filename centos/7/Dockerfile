@@ -6,7 +6,10 @@ LABEL eu.indigo-datacloud.version="7"
 LABEL eu.indigo-datacloud.architecture="amd64"
 
 RUN yum -y update; yum clean all
-RUN yum -y install epel-release yum-priorities; yum clean all
+RUN yum -y install \
+           epel-release \
+           yum-priorities \
+           wget; yum clean all
 
 #Install INDIGO-DataCloud's package repository (to install a specific version of Ansible)
 RUN echo "check_obsoletes = 1" >> /etc/yum/pluginconf.d/priorities.conf
@@ -19,8 +22,6 @@ RUN yum -y install \
     openssh-clients \
     openssh-server \
     python-distribute \
-    gcc \
-    python-devel \
     wget \
     openssh-client \
     sshpass \

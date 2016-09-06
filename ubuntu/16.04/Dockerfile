@@ -6,7 +6,7 @@ LABEL eu.indigo-datacloud.version="16.04"
 LABEL eu.indigo-datacloud.architecture="amd64"
 
 # Install ansible repository
-RUN apt-get update -y
+RUN apt-get update -y && apt-get install -y wget
 RUN apt-get install software-properties-common -y
 RUN apt-add-repository ppa:ansible/ansible
 
@@ -15,11 +15,8 @@ RUN apt-get update && \
     apt-get install -y \
         ansible \
         cloud-init \
-        gcc \
         openssh-client \
         openssh-server \
-        python-dev \
-        python-pip \
         sshpass \
         unzip \
     && apt-get clean \
