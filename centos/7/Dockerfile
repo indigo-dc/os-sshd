@@ -6,7 +6,12 @@ LABEL eu.indigo-datacloud.version="7"
 LABEL eu.indigo-datacloud.architecture="amd64"
 
 RUN yum -y update; yum clean all
-RUN yum -y install epel-release; yum clean all
+RUN yum -y install epel-release yum-priorities; yum clean all
+
+#Install INDIGO-DataCloud's package repository (to install a specific version of Ansible)
+RUN echo "check_obsoletes = 1" >> /etc/yum/pluginconf.d/priorities.conf
+RUN wget http://repo.indigo-datacloud.eu/repos/1/indigo1.repo -O /etc/yum.repos.d/indigo1.repo
+RUN rpm --import http://repo.indigo-datacloud.eu/repository/RPM-GPG-KEY-indigodc
 
 #Pre-installed packages to speed IM contextualization
 RUN yum -y install \
