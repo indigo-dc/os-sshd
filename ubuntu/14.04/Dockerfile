@@ -10,16 +10,13 @@ RUN apt-get update && apt-get install -y wget
 RUN wget http://repo.indigo-datacloud.eu/repos/1/indigo1-ubuntu14_04.list -O indigo1-ubuntu14_04.list
 RUN wget -q -O - http://repo.indigo-datacloud.eu/repository/RPM-GPG-KEY-indigodc | sudo apt-key add -
 
-# Pre-install packages to speed IM contextualization
+# Pre-install packages to speed IM installation
 RUN apt-get update && \
     apt-get install -y \
         ansible \
         cloud-init \
-        gcc \
         openssh-client \
         openssh-server \
-        python-dev \
-        python-pip \
         sshpass \
         unzip \
     && apt-get clean \

@@ -14,8 +14,6 @@ RUN yum -y install \
     openssh-clients \
     openssh-server \
     python-distribute \
-    gcc \
-    python-devel \
     wget \
     openssh-client \
     sshpass \
