@@ -5,10 +5,10 @@ LABEL eu.indigo-datacloud.distribution="ubuntu"
 LABEL eu.indigo-datacloud.version="16.04"
 LABEL eu.indigo-datacloud.architecture="amd64"
 
-# Install ansible repository
-RUN apt-get update -y && apt-get install -y wget
-RUN apt-get install software-properties-common -y
-RUN apt-add-repository ppa:ansible/ansible
+#Install INDIGO-DataCloud's package repository (to install a specific version of Ansible)
+RUN apt-get update && apt-get install -y wget
+RUN wget http://repo.indigo-datacloud.eu/repos/1/indigo1-ubuntu14_04.list -O /etc/apt/sources.list.d/indigo1-ubuntu14_04.list
+RUN wget -q -O - http://repo.indigo-datacloud.eu/repository/RPM-GPG-KEY-indigodc | apt-key add -
 
 # Pre-install packages to speed IM contextualization
 RUN apt-get update && \
