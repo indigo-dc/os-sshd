@@ -9,7 +9,7 @@ RUN yum -y update; yum clean all
 RUN yum -y install \
            epel-release \
            yum-priorities \
-           wget; yum clean all
+           git wget; yum clean all
 
 #Install INDIGO-DataCloud's package repository (to install a specific version of Ansible)
 RUN echo "check_obsoletes = 1" >> /etc/yum/pluginconf.d/priorities.conf

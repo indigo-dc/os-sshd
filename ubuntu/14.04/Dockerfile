@@ -15,6 +15,7 @@ RUN apt-get update && \
     apt-get install -y \
         ansible \
         cloud-init \
+        git \
         openssh-client \
         openssh-server \
         sshpass \
